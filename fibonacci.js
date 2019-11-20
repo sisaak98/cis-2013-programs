@@ -24,7 +24,7 @@ var generate = function ()
 	// write whatever kind of loop you want, given the above info, to generate the appropriate
 	// number of fibonacci numbers and then post it to the html DOM 
     
-    while(intCount > 1)
+    while(intCount > 2)
     {
         k = i + j;
         stringOutput = stringOutput + k + " ";
