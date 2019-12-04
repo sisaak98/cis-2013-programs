@@ -64,18 +64,27 @@ var passwordCheckOld = function ()
    */
    var intIndex;
    var boolIsBadVal = false;
-   for(intIndex = 0; intIndex < arrayBadPasswords.length && boolIsBadVal == false && stringPassword.length <= 8; intIndex++)
+   if(stringPassword.length < 8)
    {
-      if(stringPassword == arrayBadPasswords[intIndex])
+      boolIsBadVal = true;
+      stringOutput = "This is a bad password";
+   }
+   else
+   {
+      for(intIndex = 0; intIndex < arrayBadPasswords.length && boolIsBadVal == false; intIndex++)
       {
-         boolIsBadVal = true;
-         stringOutput = "This is a bad password";
+         if(stringPassword == arrayBadPasswords[intIndex])
+         {
+            boolIsBadVal = true;
+            stringOutput = "This is a bad password";
+         }
+      }
+      if(!boolIsBadVal)
+      {
+         stringOutput = "This is a good password";
       }
    }
-   if(!boolIsBadVal)
-   {
-      stringOutput = "This is a good password";
-   }
+   
    
    $("output").value = stringOutput;
 };
